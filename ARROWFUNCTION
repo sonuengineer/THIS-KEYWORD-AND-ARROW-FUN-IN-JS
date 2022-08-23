@@ -1,0 +1,30 @@
+class Student {
+constructor(name, age, marks) {
+this.name = name;
+this.age =age;
+this.marks= marks;
+}
+
+setPlacementAge(minPlacementAge) { 
+    //console.log(this);            //Student { name: 'SONU', age: 25, marks: 75 }
+return (minMarks) => {
+//console.log('inside egligibleForCurrent Company', this)           //inside egligibleForCurrent Company Student { name: 'SONU', age: 25, marks: 75 }
+if(this.marks> minMarks && this.age> minPlacementAge){
+console.log(this.name + "is ready for placements")
+} else {
+console.log(this.name + "is not ready for placements")
+}
+}
+}
+}
+
+const S = new Student('SONU', 25, 75);
+const SUNIL = new Student("SUNIL", 13, 35)
+
+S.setPlacementAge(18)(40)
+
+
+
+//
+//
+//SONUis ready for placements
